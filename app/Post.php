@@ -9,9 +9,9 @@ class Post extends Model
   //qui gli diciamo cosa si deve salvare il resto verrà ignorato
   protected $fillable = ['category_id','titolo','content'];
 
-  public function categories(){
+  public function category(){
 
     //il ritorno della one to many
-    return $this->belongsTo('app\Category');
+    return $this->belongsTo('App\Category');
   }
 }
