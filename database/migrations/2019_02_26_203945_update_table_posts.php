@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdatePostsTable extends Migration
+class UpdateTablePosts extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,10 @@ class UpdatePostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-          //after posiziono la colonna dopo id
-          $table->unsignedInteger('categoria_id')->after('id');
-          $table->foreign('categoria_id')->references('id')->on('categorie');
+          //con after sposto la colonna category_id che verrà creata dopo la colonna id
+          $table->unsignedInteger('category_id')->after('id');
+
+          $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

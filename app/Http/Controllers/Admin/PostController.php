@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -24,7 +25,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("admin.create");
+        $categorie = Category::all();
+      //  dd($categorie);
+        return view("admin.create", compact('categorie'));
     }
 
     /**

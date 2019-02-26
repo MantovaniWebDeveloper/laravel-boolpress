@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="container">
   <div class="row">
@@ -15,7 +15,9 @@
     </div>
     <div class="form-group">
       <select class="form-control" name="categorie">
-        <option value=""></option>
+        @foreach ($categorie as $key => $categoria)
+          <option value="">{{ $categoria->nomeCategoria}}</option>
+        @endforeach
       </select>
     </div>
     <input type="submit" class="btn btn-success col-12" name="salvaPost" value="Salva">
