@@ -15,4 +15,16 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/admin', 'Admin\HomeController@index')->name('admin.home');
+Route::get('/admin', 'Admin\HomeController@index')->name('admin.home')->middleware('auth');
+
+Route::group(['middleware' => ['auth']],function(){
+
+  Route::resource('/admin', 'Admin\PostController');
+  Route::get('/admin/post/create', 'Admin\PostController@index');
+  Route::get('/admin/post/edit/{{id}}', 'Admin\PostController@edit');
+
+});
+
+
+
+//Route::get('/home', 'HomeController@index')->name('home');

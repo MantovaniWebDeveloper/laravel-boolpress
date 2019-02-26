@@ -1,1 +1,1 @@
-ciao sei nel admin
+@extends('layouts.app')

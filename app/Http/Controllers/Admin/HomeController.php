@@ -8,8 +8,9 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function index(){
-      
-      dd("siamo dentro lato admin");
+
+      return view("admin.home");
 
     }
+    
 }
