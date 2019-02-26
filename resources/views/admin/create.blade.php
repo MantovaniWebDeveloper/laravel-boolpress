@@ -6,7 +6,9 @@
       <h3>Aggiungi un post</h3>
     </div>
   </div>
-  <form class="" action="index.html" method="post">
+  <form class="" action="{{ route('admin.store')}}" method="post">
+    @csrf
+    @method('POST')
     <div class="form-group">
       <input type="text" class="form-control" name="titolo" placeholder="titolo">
     </div>
@@ -14,9 +16,9 @@
       <textarea class="form-control" name="content" rows="8" cols="80"></textarea>
     </div>
     <div class="form-group">
-      <select class="form-control" name="categorie">
+      <select class="form-control" name="category_id">
         @foreach ($categorie as $key => $categoria)
-          <option value="">{{ $categoria->nomeCategoria}}</option>
+          <option value="{{ $categoria->id}}">{{ $categoria->nomeCategoria}}</option>
         @endforeach
       </select>
     </div>

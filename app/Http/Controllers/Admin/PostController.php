@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -15,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-      //  return view("admin.home");
+     return view("admin.home");
     }
 
     /**
@@ -38,7 +39,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //recupero tutti i dati dal form
+        $postData = $request->all();
+        //dd($postData);
+
+        $newPost = new Post();
+        $newPost->fill($postData);
+        $newPost->save();
+
+        return redirect()->route('admin.index');
     }
 
     /**
