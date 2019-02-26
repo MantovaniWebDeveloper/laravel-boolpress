@@ -71,7 +71,7 @@ class PostController extends Controller
     {
       // metodo con find trovo tramite id
       $post = Post::find($id);
-      dd($post);
+    //  dd($post);
       //elimino */
       $post->delete();
 

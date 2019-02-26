@@ -31,13 +31,11 @@
               <td>{{$post->category->nomeCategoria}}</td>
               <td><a href="{{route('admin.edit', $post->id)}}"><button class="btn btn-warning">Modifica</button></a></td>
               <td>
-                <form class="" action="index.html" method="post">
                   <form class="" action="{{ route('admin.destroy', $post->id) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <input class="btn btn-danger" type="submit" name="" value="Cancella">
                   </form>
-                </form>
               </td>
             </tr>
          @endforeach
