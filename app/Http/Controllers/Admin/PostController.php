@@ -53,6 +53,7 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+      // metodo con find trovo tramite id
         $post = Post::find($id);
 
         $postData= $request->all();
@@ -68,6 +69,12 @@ class PostController extends Controller
 
     public function destroy($id)
     {
-        //
+      // metodo con find trovo tramite id
+      $post = Post::find($id);
+      dd($post);
+      //elimino */
+      $post->delete();
+
+      return redirect()->route('admin.index');
     }
 }

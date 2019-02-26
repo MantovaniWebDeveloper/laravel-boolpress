@@ -20,9 +20,8 @@ Route::get('/admin', 'Admin\HomeController@index')->name('admin.home')->middlewa
 Route::group(['middleware' => ['auth']],function(){
 
   Route::resource('/admin', 'Admin\PostController');
-  Route::get('/admin/post/create', 'Admin\PostController@create');
+  Route::get('/admin/post/create', 'Admin\PostController@create')->name('admin.create');
   Route::get('/admin/post/edit/{id}', 'Admin\PostController@edit')->name('admin.edit');
-
 });
 
 
