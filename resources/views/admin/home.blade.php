@@ -21,7 +21,7 @@
               <th>{{$post->id}}</th>
               <td>{{$post->titolo}}</td>
               <td>{{$post->category->nomeCategoria}}</td>
-              <td><a href=""><button class="btn btn-warning">Modifica</button></a></td>
+              <td><a href="{{route('admin.edit', $post->id)}}"><button class="btn btn-warning">Modifica</button></a></td>
               <td></td>
             </tr>
          @endforeach

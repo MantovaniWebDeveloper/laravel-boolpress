@@ -21,7 +21,7 @@ Route::group(['middleware' => ['auth']],function(){
 
   Route::resource('/admin', 'Admin\PostController');
   Route::get('/admin/post/create', 'Admin\PostController@create');
-  Route::get('/admin/post/edit/{{id}}', 'Admin\PostController@edit');
+  Route::get('/admin/post/edit/{id}', 'Admin\PostController@edit')->name('admin.edit');
 
 });
 
