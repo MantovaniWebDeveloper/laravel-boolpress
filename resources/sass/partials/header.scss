@@ -1,5 +1,12 @@
 header {
-  background-color: red;
-  height: 80px;
+  background-color: yellow;
+  height: 70px;
   width: 100%;
+  .wrapTitle {
+    height: 100%;
+    h2{
+      height: 100%;
+      line-height: 70px; 
+    }
+  }
 }
