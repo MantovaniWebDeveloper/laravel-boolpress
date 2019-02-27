@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
   public function index(){
 
-    $posts = Post::orderBy('created_at')->limit(5)->get();
+    $posts = Post::orderBy('created_at','DESC')->limit(5)->get();
     //dd("siamo dentro lato client");
     return view("index", compact('posts'));
   }
