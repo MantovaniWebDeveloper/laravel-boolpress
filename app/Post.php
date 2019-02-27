@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
   //qui gli diciamo cosa si deve salvare il resto verrà ignorato
-  protected $fillable = ['category_id','titolo','content'];
+  protected $fillable = ['category_id','titolo','content','category_slug'];
 
   public function category(){
 

@@ -17,6 +17,11 @@ class CategoryController extends Controller
       //inversione
       $postCercati = $categoria->posts;
 
-      return view("category", compact('postCercati'));
+      $datiCompleti = [
+        'category' => $categoria,
+        'posts' => $postCercati
+      ];
+      //con array non serve compact
+      return view("category", $datiCompleti);
     }
 }
