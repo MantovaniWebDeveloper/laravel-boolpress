@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/category/{category_slug}', 'CategoryController@categorySlug');
 
 Auth::routes();
 

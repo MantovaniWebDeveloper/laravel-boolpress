@@ -14,4 +14,5 @@ class HomeController extends Controller
     //dd("siamo dentro lato client");
     return view("index", compact('posts'));
   }
+
 }
